@@ -10,7 +10,7 @@ const products =
             priceCents: 1090,
             rating: 
             {
-                stars: 'rating-45.png',
+                stars: 4.5,
                 count: 87
             }
         }, 
@@ -20,7 +20,7 @@ const products =
             priceCents: 2095,
             rating:
                 {
-                    stars: 'rating-40.png',
+                    stars: 4,
                     count: 127 
                 }
         },
@@ -30,9 +30,19 @@ const products =
             priceCents: 799,
             rating: 
                 {
-                    stars: 'rating-45.png',
+                    stars: 4.5,
                     count: 56
                 } 
+        },
+        {
+            image:'black-2-slot-toaster.jpg',
+                name: '2 Slot Toaster - Black',
+                priceCents: 1899,
+                rating: 
+                    {
+                        stars: 5,
+                        count: 2197
+                    }   
         }
     ];
 
@@ -53,14 +63,14 @@ products.forEach( (product) => {
 
             <div class="product-rating-container">
                     <img class="product-rating-stars"
-                    src="images/ratings/${product.rating.stars}">
+                    src="images/ratings/rating-${product.rating.stars * 10}.png">
                 <div class="product-rating-count link-primary">
                     ${product.rating.count}
                 </div>
             </div>
 
             <div class="product-price">
-                    $${product.priceCents / 100}
+                    $${(product.priceCents / 100).toFixed(2)}
             </div>
 
             <div class="product-quantity-container">
