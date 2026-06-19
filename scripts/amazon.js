@@ -3,8 +3,8 @@ console.log("Load js");
 let product_html = '';
 
 
-products.forEach( (product) => {
-        product_html += `
+products.forEach((product) => {
+    product_html += `
         <div class="product-container">
             <div class="product-image-container">
                     <img class="product-image"
@@ -49,14 +49,51 @@ products.forEach( (product) => {
                 Added
             </div>
 
-            <button class="add-to-cart-button button-primary">
+            <button class="add-to-cart-button button-primary js-add-to-cart-btn" data-product-name="${product.name}">
                 Add to Cart
             </button>
 
         </div>
         `
     const view_product = document.querySelector('.js-products-grid').innerHTML = product_html;
+
 });
+
+let quantity = 0;
+let found = false;
+let add_to_cart_btn = document.querySelectorAll('.js-add-to-cart-btn').forEach((addCartBtn) => {
+    addCartBtn.addEventListener('click', () => {
+        const product_name = addCartBtn.dataset.productName;
+        let matchingItem;
+
+        cart.forEach((item) => {
+            if (product_name === item.product_name) {
+                matchingItem = item;
+            }
+        });
+
+        if (matchingItem) {
+            matchingItem.quantity += 1;
+        } else {
+            cart.push(
+                {
+                    product_name: product_name,
+                    quantity: 1
+                }
+            )
+        }
+        console.log(cart);
+    });
+});
+
+
+
+
+
+
+
+
+
 
 
 
