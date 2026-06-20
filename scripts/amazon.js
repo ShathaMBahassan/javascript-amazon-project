@@ -1,5 +1,9 @@
+import {products} from  "../data/products.js";
+import {cart} from  "../data/cart.js";
+
 console.log("Load js");
 
+console.log(products);
 let product_html = '';
 
 

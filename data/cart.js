@@ -1,3 +1,3 @@
 console.log("load cart");
-const cart = [];
+export const cart = [];
 
