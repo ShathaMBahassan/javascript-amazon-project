@@ -87,9 +87,9 @@ function updateCartQuantity(){
 function addToCart(product_id){
     let matchingItem;
 
-    cart.forEach((item) => {
-            if (product_id === item.id) {
-                matchingItem = item;
+    cart.forEach((cartItem) => {
+            if (product_id === cartItem.id) {
+                matchingItem = cartItem;
             }
     });
 
