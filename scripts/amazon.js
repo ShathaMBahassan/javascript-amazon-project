@@ -3,7 +3,6 @@ import {cart} from  "../data/cart.js";
 
 console.log("Load js");
 
-console.log(products);
 let product_html = '';
 
 
@@ -69,15 +68,21 @@ let add_to_cart_btn = document.querySelectorAll('.js-add-to-cart-btn').forEach((
     addCartBtn.addEventListener('click', () => {
         const product_id = addCartBtn.dataset.productId;
 
-        let matchingItem;
+        document.querySelector('.js-cart-quantity').innerHTML=addToCart(product_id);
+    });
+});
 
-        cart.forEach((item) => {
+function addToCart(product_id){
+    let matchingItem;
+
+    cart.forEach((item) => {
             if (product_id === item.id) {
                 matchingItem = item;
             }
-        });
+    });
 
-        if (matchingItem) {
+    
+    if (matchingItem) {
             matchingItem.quantity += 1;
         } else {
             cart.push(
@@ -94,10 +99,11 @@ let add_to_cart_btn = document.querySelectorAll('.js-add-to-cart-btn').forEach((
             total = total + totalQuantity.quantity;
         });
 
-        console.log(`the number of products in the cart are ${total}`);
-        document.querySelector('.js-cart-quantity').innerHTML=total;
-    });
-});
+        return total;
+
+}
+
+
 
 
 
