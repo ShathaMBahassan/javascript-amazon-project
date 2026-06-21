@@ -1,4 +1,4 @@
-console.log("load products")
+console.log("products load")
 
 export const products = [
   {
