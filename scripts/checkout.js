@@ -9,13 +9,14 @@ let cart_html = '';
 
 cart.forEach((cartItem) => {
 
-    let productPrice=0;
+    let productPrice = 0;
     const productItem = products.find((product) => {
         return product.id === cartItem.id;
     });
 
-    
-    cart_html += `<div class="cart-item-container">
+
+    cart_html += `<div class="cart-item-container 
+                    js-cart-item-container-${productItem.id}">
             <div class="delivery-date">
               Delivery date: Tuesday, June 21
             </div>
@@ -29,7 +30,7 @@ cart.forEach((cartItem) => {
                   ${productItem.name}
                 </div>
                 <div class="product-price">
-                  $${formatCurrency(productItem.priceCents)*cartItem.quantity}
+                  $${formatCurrency(productItem.priceCents) * cartItem.quantity}
                 </div>
                 <div class="product-quantity">
                   <span>
@@ -91,16 +92,21 @@ cart.forEach((cartItem) => {
             </div>
           </div>`;
 
-        document.querySelector(".js-product-added").innerHTML =cart_html;
+    document.querySelector(".js-product-added").innerHTML = cart_html;
 
 });
 
- document.querySelectorAll('.js-delete-product').forEach( (link) => {
-        link.addEventListener("click", () => {
-            const product_id = link.dataset.productId;
-            removeFromCart(product_id);
-        });
+document.querySelectorAll('.js-delete-product').forEach((link) => {
+    link.addEventListener("click", () => {
+        const product_id = link.dataset.productId;
+        removeFromCart(product_id);
+
+        const card = document.querySelector(`.js-cart-item-container-${product_id}`);
+        card.remove();
     });
+});
+
+
 
 
 

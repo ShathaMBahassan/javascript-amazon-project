@@ -80,9 +80,6 @@ function updateCartQuantity(){
         cart.forEach((totalQuantity) => {
             total = total + totalQuantity.quantity;
         });
-
-        
-
         document.querySelector('.js-cart-quantity').innerHTML=total;
 }
 
