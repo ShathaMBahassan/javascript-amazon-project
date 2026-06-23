@@ -7,10 +7,10 @@ console.log("Load js");
 
 let product_html = '';
 
-
 products.forEach((product) => {
     product_html += `
         <div class="product-container">
+        
             <div class="product-image-container">
                     <img class="product-image"
                     src="images/products/${product.image}">
@@ -64,6 +64,18 @@ products.forEach((product) => {
 
 });
 
+function updateCartQuantity() {
+  let total = 0;
+
+  cart.forEach((cartItem) => {
+    total += cartItem.quantity;
+  });
+
+  document.querySelector('.js-cart-quantity').innerHTML = total;
+}
+
+updateCartQuantity(); 
+
 let quantity = 0;
 let found = false;
 let add_to_cart_btn = document.querySelectorAll('.js-add-to-cart-btn').forEach((addCartBtn) => {
@@ -74,14 +86,7 @@ let add_to_cart_btn = document.querySelectorAll('.js-add-to-cart-btn').forEach((
     });
 });
 
-function updateCartQuantity(){
-    // Total Quantity 
-        let total = 0;
-        cart.forEach((totalQuantity) => {
-            total = total + totalQuantity.quantity;
-        });
-        document.querySelector('.js-cart-quantity').innerHTML=total;
-}
+
 
 
 

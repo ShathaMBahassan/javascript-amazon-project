@@ -85,7 +85,7 @@ function deliveryOptionHTML(delivery_options, productItem, cartItem) {
 
     delivery_options.forEach((option) => {
 
-        let price = (option.priceCents === 0) ? "FREE Shipping" : `$${formatCurrency(option.priceCents)} - Shipping`;
+        let price = (option.priceCents === 0) ? "FREE Shipping" : `$${formatCurrency(option.priceCents)* cartItem.quantity} - Shipping`;
 
         const isChecked = (option.id === cartItem.delivery_options_id) ? 'checked' : '';
 
