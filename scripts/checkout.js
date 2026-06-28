@@ -4,7 +4,9 @@ import { products } from "../data/products.js";
 import { delivery_options } from "./utils/deliveryOptions.js"
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { payment_summary , totalCartPrice ,totalShippingPrice , totalCartQuantity } from "./utils/paymentSummary.js"
-import "../data/cart-oop.js"
+// import "../data/cart-oop.js"
+import "../data/cart-class.js"
+
 
 console.log("load js");
 
