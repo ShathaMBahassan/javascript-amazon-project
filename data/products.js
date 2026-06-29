@@ -1,4 +1,34 @@
-console.log("products load")
+
+import { formatCurrency } from "../../scripts/utils/money.js";
+class Product {
+  id;
+  image;
+  name;
+  rating;
+  priceCents;
+
+  constructor(productDetails){
+    this.id = productDetails.id;
+    this.image = productDetails.image;
+    this.name= productDetails.name;
+    this.rating= productDetails.rating;
+    this.priceCents = productDetails.priceCents;
+  }
+
+  getStars(){
+    return `images/ratings/rating-${this.rating.stars * 10}.png`;
+  }
+
+  getPrice(){
+    return `$${formatCurrency(this.priceCents)}`;
+  }
+
+  getImage(){
+    return `images/products/${this.image}`;
+  }
+
+}
+
 
 export const products = [
   {
@@ -659,4 +689,9 @@ export const products = [
       "mens"
     ]
   }
-];
+].map((product)=>{
+  return new Product(product);
+});
+
+
+console.log(products)
