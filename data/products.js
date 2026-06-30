@@ -27,7 +27,32 @@ class Product {
     return `images/products/${this.image}`;
   }
 
+  getSize(){
+    return '';
+  }
+
 }
+
+class Clothing extends Product { // class subclass extends superclass
+  sizeChartLink;
+
+  constructor(productDetails){
+    // invokes the constructor of superclass
+    super(productDetails);
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+  
+
+  getSize(){
+    //Overridding 
+    super.getSize();
+    return `
+      <a href="${this.sizeChartLink}" target="_balnk">
+        Size Chart
+      </a>
+    `;
+  }
+};
 
 
 export const products = [
@@ -690,6 +715,12 @@ export const products = [
     ]
   }
 ].map((product)=>{
+  // Discriminator
+  if (product.type === 'clothing') {
+    // subclass
+    return new Clothing(product);
+  }
+  // superclass
   return new Product(product);
 });
 

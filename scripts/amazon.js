@@ -40,6 +40,9 @@ products.forEach((product) => {
                 </select>
             </div>
 
+            // Add polymorphism
+            ${product.getSize()}
+
             <div class="product-spacer"></div>
 
             <div class="added-to-cart">
