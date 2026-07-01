@@ -44,6 +44,6 @@ This project is a front-end Amazon-style shopping cart built with JavaScript, HT
 This project helped me move from procedural JavaScript into a more organized module-based and object-oriented style. It also gave me practice with real front-end concepts like DOM updates, events, data storage, and asynchronous JavaScript.
 
 
-<img src="images/amazon-project.png" alt="Amazon Project Screenshot" style="border: 2px solid #ddd; border-radius: 8px;">
-![Amazon Project Screenshot](images/project/01-amazon-project.png)
-![Amazon Project Screenshot](images/project/02-amazon-project.png)
+<p align="center">
+  <img src="images/project/01-amazon-project.png" alt="Amazon Project Screenshot" style="border: 2px solid #ddd; border-radius: 8px;">
+</p>
