@@ -45,5 +45,6 @@ This project helped me move from procedural JavaScript into a more organized mod
 
 
 <p align="center">
-  <img src="images/project/01-amazon-project.png" alt="Amazon Project Screenshot" style="border: 2px solid #ddd; border-radius: 8px;">
+  <img src="images/project/01-amazon-project.png" alt="Amazon Project Screenshot" style="border: 2px solid #ddd; border-radius: 8px; border-color:#293681;">
+  <img src="images/project/02-amazon-project.png" alt="Amazon Project Screenshot" style="border: 2px solid #ddd; border-radius: 8px; border-color:#293681;">
 </p>
